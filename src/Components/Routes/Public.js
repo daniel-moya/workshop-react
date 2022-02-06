@@ -1,8 +1,7 @@
 import React from 'react';
 import { Navigate} from 'react-router-dom';
 
-const PublicRoute = ({children}) => {
-  const isLogged = true
+const PublicRoute = ({ children, isLogged }) => {
   return isLogged ? <Navigate to="/"/> : children ;
 };
 

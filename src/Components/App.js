@@ -15,6 +15,7 @@ import NotFound from "./Pages/404";
 import Header from "./Organims/Header";
 import './App.css'; 
 const App = () => {
+  const isLogged = false;
   return (
     <div>
       <Header />
@@ -22,7 +23,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isLogged={isLogged}>
               <Home />
             </ProtectedRoute>
           }
@@ -30,7 +31,7 @@ const App = () => {
         <Route
           path="/especialidades"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isLogged={isLogged}>
               <Specialitities />
             </ProtectedRoute>
           }
@@ -38,7 +39,7 @@ const App = () => {
         <Route
           path="/especialidades/:id"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isLogged={isLogged}>
               <Speciality />
             </ProtectedRoute>
           }
@@ -46,7 +47,7 @@ const App = () => {
         <Route
           path="/cursos"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isLogged={isLogged}>
               <Courses />
             </ProtectedRoute>
           }
@@ -54,7 +55,7 @@ const App = () => {
         <Route
           path="/cursos/:id"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isLogged={isLogged}>
               <Course />
             </ProtectedRoute>
           }
@@ -62,7 +63,7 @@ const App = () => {
         <Route
           path="/profesores"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isLogged={isLogged}>
               <Teachers />
             </ProtectedRoute>
           }
@@ -70,7 +71,7 @@ const App = () => {
         <Route
           path="/clase/:id"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute isLogged={isLogged}>
               <Fragment />
             </ProtectedRoute>
           }
@@ -80,7 +81,7 @@ const App = () => {
         <Route
           path="/login"
           element={
-            <PublicRoute>
+            <PublicRoute isLogged={isLogged}>
               <Login />
             </PublicRoute>
           }
@@ -88,7 +89,7 @@ const App = () => {
         <Route
           path="/regiter"
           element={
-            <PublicRoute>
+            <PublicRoute isLogged={isLogged}>
               <Register />
             </PublicRoute>
           }
